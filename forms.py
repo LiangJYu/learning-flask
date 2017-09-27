@@ -1,7 +1,7 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 
-class SignupForm(Form):
+class SignupForm(FlaskForm):
   first_name = StringField('First name')
   last_name = StringField('Last name')
   email = StringField('Email')
