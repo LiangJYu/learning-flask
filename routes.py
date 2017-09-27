@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from models import db
+from forms import SignupForm
 
 app = Flask(__name__)
 
@@ -13,6 +14,11 @@ def index():
 @app.route("/about")
 def about():
   return render_template("about.html")
+
+@app.route("/signup")
+def signup():
+  form = SignupForm()
+  return render_template("signup.html", form=form)
 
 if __name__ == "__main__":
   app.run(debug=True)
