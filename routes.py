@@ -60,6 +60,11 @@ def login():
   elif request.method == 'GET':
     return render_template('login.html', form=form)
 
+@app.route("/logout")
+def logout():
+  session.pop('email', None)
+  return render_template("index.html")
+
 @app.route("/home")
 def home():
   return render_template("home.html")
